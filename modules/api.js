@@ -2,6 +2,7 @@ const apiUrl = "https://official-joke-api.appspot.com/random_joke"
 
 const getJoke = document.getElementById("fetchJokes")
 const jokeBody = document.getElementsByClassName("api-body")[0]
+const saveJoke = document.getElementById("saveJoke")
 
 
 const fetchData = () => {
@@ -41,3 +42,14 @@ const fetchData = () => {
 // }
 fetchData();
 getJoke.addEventListener("click",fetchData)
+saveJoke.addEventListener("click", () => {
+    const setup = document.querySelector(".setup").textContent;
+    const punchline = document.querySelector(".punchline").textContent;
+    
+    if (setup && punchline) {
+        localStorage.setItem("favoriteJoke", JSON.stringify({ setup, punchline }));
+        alert("Joke saved to favorites!");
+    } else {
+        alert("No joke to save. Please fetch a joke first.");
+    }
+});
