@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Let the Jokes Begin!</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .button-container {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -12,7 +20,10 @@
     <section class="api-body">
       
     </section>
-    <button id="fetchJokes">Get Another Joke</button>
+    <div class="button-container">
+      <button id="fetchJokes">Get Another Joke😂</button>
+      <button id="saveJoke">Save as Favorites ❤️</button>
+    </div>
 
   </div>
   <script src="modules/api.js"></script>
