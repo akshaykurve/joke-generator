@@ -16,7 +16,11 @@ const fetchData = () => {
         console.log(data.punchline);
         jokeBody.innerHTML = `<p class="setup">${data.setup}</p><p class="punchline">${data.punchline}</p>`;
       })
-      .catch(error => console.error('Error fetching joke:', error));
+      .catch(error => {console.error('Error fetching joke:', error)
+        jokeBody.innerHTML = `<p class="error">Please try again later.</p>`;
+
+      }
+    );
     }
 
 // const fetchData = async () => {
